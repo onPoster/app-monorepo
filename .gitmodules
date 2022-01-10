@@ -4,3 +4,6 @@
 [submodule "packages/subgraph"]
 	path = packages/subgraph
 	url = git@github.com:onPoster/subgraph.git
+[submodule "packages/contract"]
+	path = packages/contract
+	url = git@github.com:onPoster/contract.git
