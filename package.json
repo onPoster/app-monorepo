@@ -1,0 +1,10 @@
+{
+  "name": "@onpstr/app-monorepo",
+  "version": "0.1.0",
+  "description": "Monorepo for Poster app demo",
+  "main": "index.js",
+  "repository": "git@github.com:onPoster/app-monorepo.git",
+  "author": "Jose Aguinaga <me@jjperezaguinaga.com>",
+  "license": "GPLv3",
+  "private": true
+}
