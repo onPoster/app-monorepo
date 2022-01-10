@@ -35,3 +35,32 @@ An app for showcasing [ERC-3722 – Poster](https://ethereum-magicians.org/t/erc
 1. `yarn build:local:subgraph`
 1. `yarn deploy:local:subgraph`
 1. `yarn run:local:app`
+
+## Connect to `localhost`
+
+1. Make sure you have downloaded [MetaMask](https://metamask.io) browser extension.
+1. Create a new wallet[^1] and import the following private key:
+
+```
+ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
+```
+
+1. Add the `hardhat` in your MetaMask “Networks” section:
+
+```
+Network Name: Hardhat
+New RPC URL: http://localhost:8545
+Chain Id: 31337
+```
+
+Your balance should be around 9999.95 ETH or so. If you restart the project, you might need to reset your MetaMask account so the transactions come from the first block again, which you can do by going to "Advanced > Reset Account”. **IMPORTANT: Only do this on a wallet that has the Hardhat test mnemonic imported, as this will affect ALL your accounts and not the only one the imported one.**
+
+## Using the application
+
+With the application up and running, go to `localhost:3000` and connect your wallet with the “Connect wallet” option.
+
+Write anything in the text field, and submit the transaction. You will be able to see how the posts are loaded and shortly after your post will show.
+
+---
+
+[^1]: You can always simply import Hardhat's demo mnemonic `test test test test test test test test test test test junk`. Make sure to not send any real digital assets to any of these accounts, as all their private keys are publicly known.
