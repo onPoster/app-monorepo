@@ -1,3 +1,6 @@
 [submodule "packages/app"]
 	path = packages/app
 	url = git@github.com:onPoster/app.git
+[submodule "packages/subgraph"]
+	path = packages/subgraph
+	url = git@github.com:onPoster/subgraph.git
