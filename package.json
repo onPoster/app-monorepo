@@ -6,5 +6,17 @@
   "repository": "git@github.com:onPoster/app-monorepo.git",
   "author": "Jose Aguinaga <me@jjperezaguinaga.com>",
   "license": "GPLv3",
-  "private": true
+  "private": true,
+  "workspaces": [
+    "packages/**"
+  ],
+  "scripts": {
+    "run:local:node": "yarn workspace Poster run node",
+    "deploy:local:contracts": "yarn workspace Poster run deploy --network localhost",
+    "run:local:subgraph": "docker-compose -f packages/subgraph/docker-compose.yml up",
+    "config:local:subgraph": "NETWORK=localhost yarn workspace @onposter/subgraph run define",
+    "build:local:subgraph": "yarn workspace @onposter/subgraph run codegen && yarn workspace @onposter/subgraph run build",
+    "deploy:local:subgraph": "yarn workspace @onposter/subgraph run create-local && yarn workspace @onposter/subgraph run deploy-local -l v0.0.1",
+    "run:local:app": "yarn workspace @ethposter/app run dev:local"
+  }
 }
