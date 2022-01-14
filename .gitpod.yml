@@ -5,10 +5,16 @@
 tasks:
   - name: Installing all submodules & dependencies
     init: |
+      echo '📦 Installing all dependencies'
       git submodule update --recursive --remote
       yarn
+      gp sync-done deps
   ## Ethereum node
   - name: Running local node
+    init: |
+      echo '⛓ Waiting for dependencies to finish'
+      gp sync-await deps
+      echo '⛓ Starting Ethereum node'
     command: yarn run:local:node
   - name: Deploy smart contracts
     command: |
@@ -44,7 +50,7 @@ tasks:
   - name: Starts dev server (nextjs)
     init: gp sync-await subgraph
     command: |
-      echo '📦 Starting nextjs application '
+      echo '🦄 Starting nextjs application '
       yarn run:local:app
     openMode: tab-after
 ports:
