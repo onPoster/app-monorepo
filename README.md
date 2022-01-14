@@ -19,7 +19,13 @@ An app for showcasing [ERC-3722 – Poster](https://ethereum-magicians.org/t/erc
 1. [`Subgraph`](https://github.com/onPoster/subgraph) - An indexer and content parser for Poster powered by TheGraph.
 1. [`App`](https://github.com/onPoster/app) - A sample UI to showcase ERC-3722 usage as a protocol for social apps.
 
-# Usage
+# Usage (cloud)
+
+The easiest way to setup `Poster App` is by running it via [Gitpod.io](https://gitpod.io/#https://github.com/onPoster/app-monorepo). It will automatically spin a cloud instance with all the required commands and dependencies ready to go.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/onPoster/app-monorepo)
+
+# Usage (locally)
 
 ## Clone repository with all submodules
 
