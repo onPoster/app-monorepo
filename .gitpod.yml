@@ -34,10 +34,9 @@ tasks:
       yarn run:local:subgraph
     openMode: tab-after
   - name: Deploy subgraph
-    init: gp sync-await graph
     command: |
       echo '🗂 Waiting for graph node (GraphQL server) to start'
-      gp await-port 8001
+      gp await-port 8020
       echo '🗂 Graph node started, deploying for Subgraph'
       yarn config:local:subgraph
       yarn build:local:subgraph
@@ -50,7 +49,7 @@ tasks:
     init: gp sync-await subgraph
     command: |
       echo '🦄 Setting all environment variables for app'
-      gp env GITPOD_SUBGRAPH_URL=$(gp url 8020)
+      gp env GITPOD_SUBGRAPH_URL=$(gp url 8000)
       gp env GITPOD_ETHEREUM_NODE_URL=$(gp url 8545)
       gp env GITPOD_IPFS_API_URL=$(gp url 5001)
       gp env GITPOD_IPFS_GATEWAY_URL=$(gp url 8080)
@@ -66,6 +65,10 @@ tasks:
 ports:
   - port: 3000
     onOpen: open-preview
+  - port: 8545
+    visibility: public
+  - port: 8000
+    visibility: public
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
