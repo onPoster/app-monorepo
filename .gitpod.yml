@@ -49,6 +49,16 @@ tasks:
   - name: Starts dev server (nextjs)
     init: gp sync-await subgraph
     command: |
+      echo '🦄 Setting all environment variables for app'
+      gp env GITPOD_SUBGRAPH_URL=$(gp url 8020)
+      gp env GITPOD_ETHEREUM_NODE_URL=$(gp url 8545)
+      gp env GITPOD_IPFS_API_URL=$(gp url 5001)
+      gp env GITPOD_IPFS_GATEWAY_URL=$(gp url 8080)
+      echo '🦄 Completed with all gitpod URLs, printing'
+      echo $GITPOD_SUBGRAPH_URL
+      echo $GITPOD_ETHEREUM_NODE_URL
+      echo $GITPOD_IPFS_API_URL
+      echo $GITPOD_IPFS_GATEWAY_URL
       echo '🦄 Starting nextjs application '
       yarn run:local:app
     openMode: tab-after
