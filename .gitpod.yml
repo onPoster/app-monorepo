@@ -15,7 +15,7 @@ tasks:
       echo '⛓ Waiting for dependencies to finish'
       gp sync-await deps
       echo '⛓ Starting Ethereum node'
-    command: yarn run:local:node
+    command: yarn run:local:node --hostname 0.0.0.0
   - name: Deploy smart contracts
     command: |
       echo '⛓ Waiting for Ethereum node to be deployed'
@@ -32,7 +32,6 @@ tasks:
       echo '🗂 Ethereum node deployed, starting graph node'
     command: |
       yarn run:local:subgraph
-      gp sync-done graph
     openMode: tab-after
   - name: Deploy subgraph
     init: gp sync-await graph
