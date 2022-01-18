@@ -37,7 +37,7 @@ tasks:
     init: gp sync-await graph
     command: |
       echo '🗂 Waiting for graph node (GraphQL server) to start'
-      gp await-port 8020
+      gp await-port 8001
       echo '🗂 Graph node started, deploying for Subgraph'
       yarn config:local:subgraph
       yarn build:local:subgraph
@@ -54,6 +54,7 @@ tasks:
       gp env GITPOD_ETHEREUM_NODE_URL=$(gp url 8545)
       gp env GITPOD_IPFS_API_URL=$(gp url 5001)
       gp env GITPOD_IPFS_GATEWAY_URL=$(gp url 8080)
+      eval $(gp env -e)
       echo '🦄 Completed with all gitpod URLs, printing'
       echo $GITPOD_SUBGRAPH_URL
       echo $GITPOD_ETHEREUM_NODE_URL
