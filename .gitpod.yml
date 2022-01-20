@@ -69,6 +69,10 @@ ports:
     visibility: public
   - port: 8000
     visibility: public
+  - port: 5001
+    visibility: public
+  - port: 8080
+    visibility: public
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
